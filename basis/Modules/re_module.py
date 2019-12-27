@@ -48,3 +48,31 @@ print(res)
 res=re.search("(abc){2}a(123|456)c", "abcabca456c").group()
 print(res)
 
+# Group '(?P<name>...)'
+res=re.search("(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<Birthday>[0-9]{4})","371481199306143242").groupdict("city")
+print(res)
+
+res2=re.search("(?P<id>[0-9]+)","abcd12345@!#43243!@adsa")  # 想匹配数字 + 所有的数字
+print(res2.groupdict())# 返回字典形式
+res2=re.search("(?P<id>[0-9]{3})","abcd12345@!#43243!@adsa")  # 想匹配3位数字 + 所有的数字
+print(res2.groupdict())# 返回字典形式
+
+res3=re.search("(?P<id>[0-9]{3})(?P<name>[a-zA-Z]+)","abcd12345DaSdsA@!#43243!@adsa")  # 想匹配3位数字 + 所有的数字
+print(res3.groupdict())# 按顺序的。
+print(res3["id"])
+
+# Split 分隔
+res=re.split("[0-9]","abc12cd3fg5h4j6o") #返回列表
+print(res)  # 1和 2没有分隔
+
+res=re.split("[0-9]+","abc12cd3fg5h4j6o") #返回列表
+print(res)  # 1和 2没有分隔
+
+# Sub 替换
+res=re.sub("[0-9]+","*","ab12ds45djk784ds231")
+print(res)  #str 类型
+#只换前两个 count=2
+res=re.sub("[0-9]+","*","ab12ds45djk784ds231",count=2)
+print(res)  #str 类型
+
+# BackSlash
