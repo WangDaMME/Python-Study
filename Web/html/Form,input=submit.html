@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <!-- 不建议使用，不能显示  还剩多少s刷新 以后js 做动态-->
+<!--    <meta http-equiv="Refresh" CONTENT="5">   &lt;!&ndash; 刷新&ndash;&gt;-->
+<!--    <meta http-equiv="Refresh" CONTENT="3; Url=http://www.baidu.com">   &lt;!&ndash; 刷新 content:5 +url: 到哪个网站&ndash;&gt;-->
+<!--    <meta name="keywords" content="harry potter, python study, 哈哈">-->  <!-- 爬虫的关键词-->
+<!--    <meta name="description" content="一些描述，别的网站可以来拿">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=IE10;IE=IE9;IE=IE8;IE=IE7">
+    <title>Lesson1</title>
+</head>
+<body>
+    <form action="http://localhost:8888/index" method="GET">   <!--GET/POST方法-->
+        <input type="text" value="user" name="user"/><!--单标-->  <!--user 之后 tornado frame 要抓取-->
+        <input type="text" value="email" name="email"/>
+        <input type="password" name="pwd"/>
+
+        <br>
+        <input type="button" value="Button">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <input type="checkbox">
+    <br>
+    <input type="radio">
+
+
+</body>
+</html>
