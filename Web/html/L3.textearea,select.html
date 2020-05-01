@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L3.textearea,select</title>
+</head>
+<body>
+    <form action="http://localhost:8888/index">
+        <p>Textarea</p>
+        <textarea name="memo">default put in middle</textarea>
+
+        <hr>
+        <p>Select</p>
+        <select name="locations"  size="10" multiple="multiple">
+            <option value="1">New York</option>
+            <option value="2">Houston</option>
+            <option value="3" selected="selected">Silicon Valey</option>
+            <option value="4">Seattle</option>
+            <option value="5">LA</option>
+
+        </select>
+
+        <hr>
+        <p>Select SubGroup</p>
+        <select >
+            <optgroup label="New York">New York State</optgroup>
+                <option>manhattan</option>
+                <option>Bronx</option>
+                <option>Flushing</option>
+            <optgroup label="Houston">Houston</optgroup>
+                <option>Some area 1</option>
+                <option>Some area 2</option>
+        </select>
+
+        <input type="submit" value="submittt">
+    </form>
+
+</body>
+</html>
