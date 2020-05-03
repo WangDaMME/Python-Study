@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a,img,table,list,label,fieldset</title>
+</head>
+<body>
+    <p>a 2 Funcs</p>
+    <a href="https://china.nba.com/" target="_blank">nba china link</a>
+    <p> Anchor </p>
+    <!-- a 行内标签-->
+    <a href="#id1">1st</a> <!-- 加上#-->
+    <a  href="#id2">2nd</a>
+    <a  href="#id3">3rd</a>
+    <a  href="#id4">4th</a>
+
+    <div style="height:600px" id="id1">1st Section</div>
+    <div style="height:600px" id="id2">2nd Section</div>
+    <div style="height:600px" id="id3">3rd Section</div>
+    <div style="height:600px" id="id4">4th Section</div>
+
+    <hr>
+    <p> Img: src / style/title /alt </p>
+    <a href="http://www.baidu.com" target="_blank">
+        <img src="kitty.jpg" style="height: 300px; width: 300px"  title="cursor show" alt="url not found, show_word">
+    </a>
+
+    <hr>
+    <p> list Ul,ol </p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <dl>
+        <dt> NY state</dt>
+        <dd>nyc</dd>
+        <dd>manhattan</dd>
+        <dd>Baffulo</dd>
+        <dt> CA state</dt>
+        <dd>LA</dd>
+        <dd>sf</dd>
+        <dd>Silicon Valley</dd>
+    </dl>
+
+
+    <hr>
+    <p> Table: thead(tr, th表示表头列) tbody(tr,td)</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>1行：1列</th>
+                <th>表头：2列</th>
+                <th>表头：3列</th>
+                <th>表头：4列</th>
+            <tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1行：1列</td>
+                <td>1行：2列</td>
+                <td>1行：3列</td>
+                <td>1行：4列</td>
+            </tr>
+            <tr>
+                <td>2行：1列</td>
+                <td colspan="2">2行：2列</td>
+                <td>2行：3列</td>
+            </tr>
+            <tr>
+                <td  rowspan="2">3行：1列</td>
+                <td>3行：2列</td>
+                <td>3行：3列</td>
+                <td>3行：4列</td>
+            </tr>
+            <tr>
+                <td>4行：2列</td>
+                <td>4行：3列</td>
+                <td>4行：4列</td>
+            </tr>
+
+
+        </tbody>
+        </tbody>
+    </table>
+
+
+    <hr>
+    <p> Label 标签</p>
+    <label for="usrname">
+        Username:<input type="text" id="usrname">
+    </label>
+
+
+    <hr>
+    <p> Fieldset 标签</p>
+    <fieldset>
+        <legend> 画一个框</legend>
+        User Account : <input type="text">
+        <br>
+        Password : <input type="text">
+    </fieldset>
+
+</body>
+</html>
