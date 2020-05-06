@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L5. Css</title>
+    <style>
+        /* Style 位置2. 写在 style 里 注意注释*/
+        /*  6 种选择器类型*/
+        /*  1.  Id Selector  (Has to be Unique 唯一性)*/
+        /*  5.  组合 Selector  (Has to be Unique 唯一性)*/
+        #id1, #id3 {
+            background-color: green;
+        }
+        #id2{
+            background-color: red;
+        }
+        /*  2.  Class Selector  (公有)*/
+
+        .para{
+            background-color: pink;
+            border:1px dotted purple;
+        }
+        /*  3.  Type Selector  (标签选择器)*/
+        h3{
+            height:100px;
+            width: 400px;
+            line-height: 100px;
+            margin:auto;
+            font-size: xx-small;
+        }
+        /*  4.  关联/层级 选择器*/
+
+        span div{
+            border: green solid 2px;
+        }
+
+        /*  6.  属性 选择器*/
+        input[type='text']
+        {
+            background-color: aquamarine;
+        }
+        input[n='alex']
+        {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Style 位置1. 标签里 写 style-->
+    <div style="background-color: aqua; height:50px; width:600px; margin:0 auto"> Hello World</div>
+    <span id ="id1"> block1 </span>
+    <span id ="id2"> block2 </span>
+    <span id="id3"> block3 </span>
+
+    <hr>
+    <p class="para" > paragraph 1. </p>
+    <div class="para" > paragraph 2. </div>
+    <h3 class="para" > paragraph 3. </h3>
+
+    <h3>  Effect of Type Selector </h3>
+
+    username: <input type="text">
+    <br>
+    pwd: <input n="alex">
+
+    <span>
+        <div>  Cascade </div>
+    </span>
+
+</body>
+</html>
