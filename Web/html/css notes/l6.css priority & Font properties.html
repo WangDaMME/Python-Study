@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L6. CSS priority,  Font properties</title>
+
+    <style>
+        .c1{
+            background-color: red;
+            color:white;
+        }
+        .c2{
+            font-size: 58px;
+            border: 1px dotted blue;
+
+            color:black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- 1. func无重叠，联用   -->
+    <!-- 2. func有重叠，越往下 越优先 (覆盖)   -->
+    <!-- 3. Style中 最优先   -->
+
+    <div class="c1 c2" style="color:green"> Prority Test</div>
+    <hr>
+    <!-- Line Height 垂直 居中: 根据 标签的height  -->
+
+    <div style="height:48px;
+    width:60%;
+    text-align: center;
+    border:1px solid red;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 48px;    
+    ">
+    asfdsaf
+    </div>
+
+</body>
+</html>
