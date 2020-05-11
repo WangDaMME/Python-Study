@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L7.Float</title>
+    <style>
+        .pg-header{
+            height: 38px;
+            background-color: #dddddd;
+        }
+
+
+    </style>
+</head>
+<!-- 去掉 body 自带的 不走到头  -->
+<body style="margin:0 auto;">
+    <div style="width:20%; background-color: red;float:left">1</div>
+    <div style="width:80%; background-color: black;  float:left" >2</div>
+
+    <!-- 改成90% 就容不下了  -->
+    <!-- 也不可以 1个 不float 一个 float  -->
+    <!--
+    <div style="width:90%; background-color: black;  float:left" >2</div>
+    -->
+    <hr>
+    <!-- Nested Div Border  -->
+    <div class="pg-header">
+        <div style="float:left;line-height:38px"> Save This Website</div>
+        <div style="float:right; line-height:38px">
+            <a style="line-height: 38px">Log In</a>
+            <a style="line-height: 38px">Sign Up</a>
+        </div>
+        <br>
+        <br>
+
+        <!-- 一个green box=96px+2px border(98px) 当装不下 自动排到下面  -->
+        <!-- 子标签 浮动 父标签没浮动 被挤压: 最后面写style:clear: both -->
+
+        <div style="width:300px;border:1px solid red;">
+            <div style="width:96px;height:30px;border:1px solid green;float:left"></div>
+            <div style="width:96px;height:30px;border:1px solid green;float:left"></div>
+            <div style="width:96px;height:30px;border:1px solid green;float:left"></div>
+            <div style="width:96px;height:30px;border:1px solid green;float:left"></div>
+            <div style="width:96px;height:30px;border:1px solid green;float:left"></div>
+            <div style="clear:both"></div>
+
+        </div>
+
+    </div>
+</body>
+</html>
