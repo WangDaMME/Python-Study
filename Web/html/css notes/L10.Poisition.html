@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L10.Position</title>
+    <style>
+        .pg-header{
+            background-color: pink;
+            position:fixed;
+            top:0;
+            height:48px;
+            width:500px;
+        }
+        .pg-body{
+            background-color: #dddddd;
+            height:5000px;
+            /* header 别把 body 盖住*/
+            margin-top:48px;
+
+        }
+    </style>
+    <script>
+        //javascript
+        function GoTop()
+        {
+            document.body.scrollTop=0;
+        }
+
+    </script>
+
+</head>
+<body>
+    <div onclick="GoTop();" style="height:50px; width:50px; background-color:black; color:white;
+         position:fixed;
+         bottom:20px;
+         right:20px;" >"Back to Top"</div>
+
+    <div class="pg-header">menu</div>
+    <div class="pg-body">pg-body</div>
+
+</body>
+</html>
