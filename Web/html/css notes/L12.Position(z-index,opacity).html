@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L12.Position:z-index, opacity</title>
+</head>
+<body>
+
+    <!--z-index 谁大 谁在前面-->
+    <div style="position:fixed;background-color:white;height:400px;width: 500px;
+         top:50%;
+        left:50%;
+        margin-left:-250px;
+        margin-top:-200px;
+        z-index: 10">
+
+        <input type="text"/>
+        <input type="text"/>
+        <input type="text"/>
+
+    </div>
+
+    <div style="position:fixed;background-color:black;
+    top: 0;
+    bottom:0;
+    right:0;
+    left:0;
+    opacity: 0.5;
+    z-index:9"></div>
+    <div style="height: 5000px;background-color: green"></div>
+
+</body>
+</html>
