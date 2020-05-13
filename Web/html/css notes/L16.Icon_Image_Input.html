@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L16. Background_Iconed Image Input</title>
+</head>
+
+    <!-- 外层先搞一个 div 包起来input-->
+    <div style="height:35px; width:400px; position:relative;">
+
+        Username: <input type="text" style="height:35px; width:270px;
+        padding-right: 50px">
+        <span style="background: url(i_name.jpg);
+        position:absolute;
+        right:30px;
+        top:10px; /* 定位到右边*/
+        display: inline-block; height:16px;width:16px"> </span> <!-- span 行内标签 转成inline block 再设置 宽高 -->
+    </div>
+
+</body>
+</html>
