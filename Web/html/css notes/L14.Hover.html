@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L14.Hover</title>
+    <style>
+        .pg-header {
+            background-color: #2459a2;
+            position:fixed;
+            top:0;
+            right:0;
+            left: 0;
+            height: 48px;
+            inline-height:48px;
+
+        }
+        .pg-body{
+            margin-top: 50px;
+        }
+        .w{
+            width:980px;
+            margin: 0 auto;/*上下0  左右auto*/
+        }
+
+        .pg-header .menu {
+            display:inline-block; /* a: 行内标签 有多大占多大 设置不了宽高*/
+            padding: 0 50px 0 50px; /*上   右  下  左*/
+            color:white;
+        }
+        /* 当光标 hover到 才显示下面效果*/
+        .pg-header .menu:hover{
+            color:pink; /* a: 行内标签 有多大占多大 设置不了宽高*/
+            background-color: green;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="pg-header">
+        <div class="w">
+            <a class="logo">Logo</a>
+            <a href="http://www.baidu.com" class="menu">Baidu</a>
+            <a href="http://www.google.com" class="menu">google</a>
+            <a href="http://www.linkedin.com" class="menu">Linkedin</a>
+
+        </div>
+
+    </div>
+
+    <div class="pg-body">
+        <div class="w">a</div>
+    </div>
+
+</body>
+</html>
