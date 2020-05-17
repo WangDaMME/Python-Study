@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L3.Dom.get</title>
+</head>
+<body>
+    <div id="id1">new content</div>
+    <a>sadsad</a>
+    <a>666</a>
+    <a>very good</a>
+
+    <script>
+        document.getElementsByTagName('a')[1].innerText=666;
+        tags=document.getElementsByTagName('a')
+
+        for (var i=0;i<tags.length;i++){tags[i].innerText=777;}
+    </script>
+
+
+</body>
+</html>
