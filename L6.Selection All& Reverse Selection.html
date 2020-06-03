@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .hide{
+        display:none;
+    }
+        .c1{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.6;
+            z-index: 9;
+        }
+
+        .c2{
+            width: 500px;
+            height: 400px;
+            background-color: white;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -200px;
+            z-index: 10;
+        }
+    </style>
+    <!--  遮罩 和 弹出框默认没有,  -->
+
+</head>
+<!-- 总共三层 1. 底层 2.遮罩层  3. 遮罩层 上面的input对话框-->
+<body style="margin:0;">
+    <div>
+        <input type="button" value="ADD Dialog" onclick="ShowDialog();"/>
+        <input type="button" value="Select All" onclick="ChooseAll();"/>
+        <input type="button" value="Cancel" onclick="CancelAll();"/>
+        <input type="button" value="Reverse Select" onclick="ReverseAll();"/>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Selection Box</th>
+                    <th>Computer Name</th>
+                    <th>Port</th>
+                </tr>
+            </thead>
+
+            <tbody id="tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1.1.1.1</td>
+                    <td>191</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1.1.1.2</td>
+                    <td>192</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1.1.1.3</td>
+                    <td>193</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. 遮罩层   -->
+    <div id="i1" class="c1 hide">    </div>
+    <!-- 2. 遮罩层 END  -->
+
+
+    <!-- 3. 弹出框   -->
+    <div id="i2" class="c2 hide">
+        <p><input type="text"/></p>
+        <p><input type="text"/></p>
+        <p>
+            <input type="button" value="cancel" onclick="HideDialog();"/>
+            <input type="button" value="confirm"/>
+
+        </p>
+
+    </div>
+    <!-- 2. 弹出框 END  -->
+
+
+<!--/body 上放效果-->
+    <script>
+        function ShowDialog(){
+            document.getElementById('i1').classList.remove('hide');
+
+            document.getElementById('i2').classList.remove('hide');
+
+        }
+
+        function HideDialog(){
+            document.getElementById('i1').classList.add('hide');
+            document.getElementById('i2').classList.add('hide');
+
+        }
+
+
+        function ChooseAll()
+        {
+            var tbody=document.getElementById('tb');
+            // get all tr
+            var tr_list=tbody.children;
+            for (var i=0;i<tr_list.length;i++)
+            {
+                var curr_tr=tr_list[i];
+                var checkbox= curr_tr.children[0].children[0];
+                checkbox.checked=true;
+            }
+
+        }
+
+        function CancelAll()
+        {
+            var tbody=document.getElementById('tb');
+            // get all tr
+            var tr_list=tbody.children;
+            for (var i=0;i<tr_list.length;i++)
+            {
+                var curr_tr=tr_list[i];
+                var checkbox= curr_tr.children[0].children[0];
+                checkbox.checked=false;
+            }
+        }
+
+        function ReverseAll()
+        {
+            var tbody=document.getElementById('tb');
+            // get all tr
+            var tr_list=tbody.children;
+            for (var i=0;i<tr_list.length;i++)
+            {
+                var curr_tr=tr_list[i];
+                var checkbox= curr_tr.children[0].children[0];
+                if (checkbox.checked)
+                {
+                    checkbox.checked =false;
+                }else
+                {
+                    checkbox.checked =true;
+                };
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
