@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>4关系选择器</title>
+
+    <style>
+        div > span {
+            color: red;
+        }
+
+        /*子元素选择器*/
+        div.box1 > span {
+            color: blue
+        }
+
+        /*空格: 后代元素选择器*/
+        div span  {
+            color: skyblue;
+        }
+
+        /*连写*/
+        div > p> span  {
+            color: purple;
+        }
+
+         /*下一个 兄弟元素 只找下一个 */
+         p+span {
+            color: orange;
+        }
+
+         /*下面所有的兄弟 ~ */
+         p~span {
+            color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        我是一个div
+        <p>我是div 中的p元素
+            <span>我是 p元素中的span</span>
+        </p>
+        <span>我是 div元素中的span1</span>
+        <span>我是 div元素中的span2</span>
+        <span>我是 div元素中的span3</span>
+        <span>我是 div元素中的span4</span>
+
+    </div>
+    <div class="box1">
+        <span>我是另一个 div 中的span, 我有box 标签</span>
+    </div>
+</body>
+</html>

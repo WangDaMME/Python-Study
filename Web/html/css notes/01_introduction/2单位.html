@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单位</title>
+    <style>
+        html {
+            font-size: 50px ;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        /** % 根据 外曾html 节点 定义的**/
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: palegreen;
+        }
+
+        .box3{
+            font-size: 25px;    /** em： 默认是 16 px, 相对于字体大小**/
+            width: 10em;
+            height: 10em;
+            background-color: paleturquoise;
+        }
+
+        .box4 {
+            width: 10rem;  /** rem： 相对于 根元素**/
+            height: 10rem;
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3">
+    </div>
+    <span><div class="box4"></div></span>
+
+</body>
+</html>
