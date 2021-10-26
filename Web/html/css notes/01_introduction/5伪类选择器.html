@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子类选择器</title>
+    <style>
+        ul > li:first-child {
+            color : red
+        }
+
+        ul > li:first-of-type {
+            color : green
+        }
+
+
+        ul > li:last-child {
+            color : orange
+        }
+        ul > li:nth-child(2n+1) {
+            color : skyblue
+        }
+
+        ul > li:not(:nth-of-type(3)) {
+            color : skyblue
+        }
+
+        a:link {
+            color : red
+        }
+
+        a:visited {
+            color : gray
+        }
+        a:hover {
+            color: lightcyan;
+            font-size: 30px;
+        }
+
+        a:active {
+            color: lightgreen;
+            font-size: 100px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <span>你好</span>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        
+    </ul>
+
+    <a href="https://www.baidu.com">访问过的</a>
+
+    <a href="https://www.renren.com">没访问过的</a>
+
+</body>
+</html>

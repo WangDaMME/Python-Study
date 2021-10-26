@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        P::first-letter {
+            font-size: 50PX;
+        }
+        p::first-line {
+            background-color: lightgreen;
+        }
+        p::selection{
+            background-color: lightskyblue;
+        }
+
+        div::before{
+            content: "abc";
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque corporis repellat modi suscipit labore minus facilis eum itaque quo dignissimos. Similique nulla illum nisi ipsa dolorem molestias earum ex culpa.</p>
+    <div>hello how are you</div>
+
+    <q>q 就是 ::before ::after 实现的</q>
+</body>
+</html>
