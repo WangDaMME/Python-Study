@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平方向布局</title>
+    <style>
+
+        .outer {
+            width: 800px;
+            height: 200px;
+            border: 10px solid red;
+            
+        }
+
+        /** 默认 没auto 自动调整 margin-right **/
+        /** 3 个值可以设置： margin-left, margin-right, width **/
+
+        .inner {
+            /* margin-left: 100px; */
+            margin-left: auto;
+
+            /* width: 200px; */
+            width: 200px;
+
+            /* width: auto; */
+            height: 200px;
+            background-color: yellow ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <div class="inner">
+
+        </div>
+    </div>
+    
+</body>
+</html>
