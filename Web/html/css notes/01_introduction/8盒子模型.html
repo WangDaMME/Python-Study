@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+
+        /**
+            内容区 (content): 元素中所有的子元素和文本内容 都在内容取中排列
+                内容区的大小 由 width 和 height 两个属性来设置
+                width:  content width 设置内容区width
+                height: content height 设置内容区height
+
+        */
+        .box1{
+            width: 200px;
+            height: 200px ;
+            background-color: skyblue;
+
+            /**
+            边框 (border): 
+                1. 边框属于盒子边缘 不包含在 (content) width , (content) height 里面. border以外 是盒子外部 margin 
+                2. 计算盒子total 大小 =  (content) width + 2 * border-width        
+            */
+
+            border-width: 20px;
+            border-color: red;
+            border-style: dashed;
+
+
+            /**
+            内边距 (padding): 
+                1. 内边距 会影响到 盒子的总体大小， 内边距 相当于硬泡沫，当然也属于 盒子内部 
+                2. 元素 当然不会写道 应泡沫上， 会写到 内容区 
+                3. 内边距 属于盒子内部 当然会 默认继承 盒子内部 background-color的颜色
+            */
+            
+            padding-top: 50px;
+
+        }
+        /**子元素 会把内容区 撑满**/
+        .inner{
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 10px yellow solid;
+
+            /** margin 右下 是 挤别人*/
+            margin-bottom: 200px;
+        }
+
+        .box3{
+            background-color: thistle;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <!-- 元素 当然不会写道 应泡沫上， 会写到 内容区 -->
+    <div class="box1">
+        <div class="inner">
+
+        </div>
+    </div>
+    <hr/>
+    <div class="box2">
+
+    </div>
+    <div class="box3"></div>
+</body>
+</html>
