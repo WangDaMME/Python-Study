@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13Box-Sizing</title>
+
+    <style>
+
+    /* box-sizing 计算盒子大小 ： 
+        Content-box 默认值 width height 指的是内容区content 大小 整个盒子可见框 大小是 = content+padding + border
+        Border-box : width height 指的是 整个盒子可见框的 大小, 内容区 会自动调整  */
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border : 10px solid red;
+            background-color: yellow;
+
+
+            /** 默认 content box **/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1图片列表的布局</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+
+        
+        /** 用ul的好处 相当于块元素， 便于清晰的布局 **/
+        .img-list {
+            height: 470px;
+            width:  190px;
+            overflow: hidden;
+
+            /** 居中 （上面留 50 px） 在ul中 居中**/
+            margin:  50px auto ; 
+            background-color: #F4F4F4;
+        }
+
+        /** ul-list 后代元素 img**/
+
+        .img-list img {
+           
+            /** width 100% 就是 子元素 自动把 父元素 撑满**/
+            width: 100%;  
+        }
+
+        .img-list li {
+
+             /** 最后一个 也会有盖上 .img-list li:not（last-child）**/
+            margin-bottom: 9px;
+        }
+        
+
+        body{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="img-list">
+        <li> 
+            <a href= "javascript: ;">
+                <img src = "./img/1.jpg"
+            </a>
+        </li>
+        <li> 
+            <a href= "javascript: ;">
+                <img src = "./img/2.jpg"
+            </a>
+        </li>
+        <li> 
+            <a href= "javascript: ;">
+                <img src = "./img/3.jpg"
+            </a>
+        </li>
+    </ul>   
+    
+</body>
+</html>
