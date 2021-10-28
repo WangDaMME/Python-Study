@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11外边距的折叠</title>
+    <style>
+        /** 并列 或 **/
+        .box1 , .box2{
+            height:200px;
+            width: 200px;
+            font-size: 100px;
+        }
+
+        .box1{
+            background-color: gray;
+            margin-bottom: 100px;
+        }
+        .box2{
+            background-color: greenyellow;
+            margin-top: 100px;
+            margin-bottom: 50px;
+
+        }
+
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 150px; 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 兄弟元素 ： 相邻垂直外边距 
+            两者都是 正值 + ，会取较大值 max(margin1,margin2)
+            特殊情况  - 不要这么设计
+            一正一负： 则 取两者 加和
+            2 负 ： 则取 两者中 绝对值较大的 -->
+
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+
+
+
+    <!-- 父亲元素 ： 相邻垂直外边距 
+        两者都是 正值 + ，会取较大值 max(margin1,margin2)
+        特殊情况  - 不要这么设计
+        一正一负： 则 取两者 加和
+        2 负 ： 则取 两者中 绝对值较大的 -->
+
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>
