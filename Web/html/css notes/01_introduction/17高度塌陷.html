@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 高度塌陷</title>
+    <style>
+        /* 不写就是auto 被子元素 inner 所撑开 */
+
+        /**BFC  (Block Format Context) 块级格式化环境
+                BFC 是 css 的一个隐含的属性， 可以为一个元素开启 bfc, 开启bfc 该元素会变成一个 独立的布局区域
+                元素开启bfc 后的特点
+                开启bfc 的元素,不会被浮动元素 所覆盖
+                开启bfc 的 子元素和 父元素, 外边距 不会重叠 
+                开启bfc 的元素,可以包裹住 浮动的子元素
+                ∵隐含属性 - 可以通过一些特殊方式开启元素的bfc
+                设置元素浮动 -- （不推荐）子元素inner 已经开启 bfc 可以将 outer 也开启bfc -- 会伴有副作用， outer 丢了 width 被 子元素撑开了， 原来不浮动的黄块 也被盖了
+                将元素设置为 行内块 inline-block元素 （不推荐）
+                将元素的overflow 设置为一个 非 visible 的值  overflow: auto / hidden  （副作用 比较小）
+        */
+
+        .outer{
+            border : 10px solid red;
+
+            /* 开启outer 的bfc */
+            /* float: left; */
+            /* display: inline-block; */
+            overflow: auto;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <div style="width:100px; height:100px; background-color: yellow;"></div>
+</body>
+</html>
