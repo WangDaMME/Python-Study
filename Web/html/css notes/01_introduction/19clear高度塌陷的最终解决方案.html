@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19clear 高度塌陷的最终解决方案</title>
+    <style>
+        .box1 {
+            border: 10px red solid;
+
+        }
+        .box2{
+            background-color: #bfa;
+            height: 300px; /** 可以改变高度**/
+            width: 100px;
+            float: left;
+        }
+
+        /* 让box3不受浮动影响 */
+        /* .box3{
+            clear: both;
+        } */
+
+        /* 在元素 最后边 添加一个标签 清除 浮动影响 把 父元素 撑起
+        元素的最后 ， 也就是 <span> abc <span> a 开头 or  c结尾的地方 */
+        
+        /** after 默认是行内元素 还要转换成 块元素 **/
+        .box1::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div> 
+        <!-- box3 能撑开box1 -->
+        <!-- <div class="box3">aaa</div> -->
+
+        <!-- 但是凭空要加出来一个 div 是一个结构问题 来处理 表现上的问题 -->
+        <!-- <div class="box3"></div>  -->
+
+    </div>
+    
+</body>
+</html>
