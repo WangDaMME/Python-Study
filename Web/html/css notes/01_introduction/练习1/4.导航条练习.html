@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习 导航条 练习</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav{
+            width: 1210px;
+            height: 48px;
+            background-color: #e8e7e3;
+
+            margin: 100px auto; /** 水平居中  上下100 左右auto**/
+        }
+        /* 想让 ul 中 li 水平 排列， 所以对li 设置浮动 */
+        .nav li {
+            float: left;
+            /* height: 100%; */
+            line-height: 48px; /* 文字 垂直居中 */
+
+            /* background-color: aqua; */
+
+        }
+
+        .nav a{
+            text-decoration:  none;
+            color: #777777;
+            font-size: 18px;
+            /* 转换位 为 块元素 */
+            display: block;
+            padding: 0 39px;
+        }
+        .nav a:hover {
+            background-color: #3f3f3f;    
+            color: white;
+        }
+
+        .nav li:last-child a{
+            padding : 0 42px 0 41px;
+        }
+        /* 宽度 给 li 也行 还是 a ，给 li 好点 都是 超链接 */
+    </style>
+
+</head>
+<body>
+
+    <!-- 创建导航条结构 -->
+    <ul class="nav">
+        <li><a href="a">HTML/CSS</a></li>
+        <li><a href="a">Browser Side</a></li>
+        <li><a href="a">Server Side</a></li>
+        <li><a href="a">Programming</a></li>
+        <li><a href="a">XML</a></li>
+        <li><a href="a">Web Building</a></li>
+        <li><a href="a">Reference</a></li>
+
+    </ul>
+    
+</body>
+</html>
