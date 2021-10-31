@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15浮动简介</title>
+
+    <style>
+
+        /* 浮动的特点
+            1. 浮动元素 会完全脱离文档流，不再占据文档流中的位置
+            2. 设置浮动以后 元素会 向 父元素的 左侧 or 右侧移动
+            3. 浮动元素默认 【不会从父元素中 移出去】 - 父元素 是一堵墙
+            4. 浮动元素 向左 or 向右移动时候, 不会超过它前面的 其他的 浮动元素
+            5. 浮动元素 的上边(/ie前面) 是一个没有浮动的块元素 div， （∵ 块元素 要占一整行），则浮动元素无法上移
+            6. 浮动元素 不会超过它上面的 兄弟浮动元素，最多就是和他同行
+        */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+            /* 浮动 none/left/right */
+            float: left; 
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            float: left; 
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+
+            float: left; 
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    
+</body>
+</html>

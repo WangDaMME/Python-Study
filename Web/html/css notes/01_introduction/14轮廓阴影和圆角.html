@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮廓阴影和圆角</title>
+
+    <style>
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box1:hover {
+            /* border: 10px solid red; */
+
+            /**  outline 不会 往下走 **/
+            /* outline: 10px solid red; */
+
+            /** 1. 水平 偏移量  2. 垂直偏移量 可±
+                3. 模糊半径 （半径越大 越模糊）**/
+            box-shadow: 20px 10px black;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            /* border-top-left-radius: 20px 50px; 水平起点， 竖直起点 * */
+
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <div>hello</div>
+    <div class="box2"></div>
+    
+</body>
+</html>

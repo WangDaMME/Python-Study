@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 浮动 设计的 初衷 - 就是 文字环绕 浮动的效果
+            - 浮动不会盖住文字 ，文字会【自动】环绕在浮动元素的周围.
+        */
+         .box1{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            float: left;
+        }
+        /* 浮动 会 使 元素 脱离文档流
+            元素从文档流中脱离 ， 元素的一些特点 也会发生变化 */
+        .box2{
+            background-color: yellowgreen;
+        }
+
+        .box3{
+            background-color: orange;
+        }
+
+        .s1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+/* 
+        脱离文档流（ie. 设置浮动后） 就需要 再区分 行内 和快元素了
+        行内元素 span 也能设置 width/height， 块元素默认被 内容撑开 */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ullam incidunt vero dicta quam recusandae dolor voluptatum odit, facere nostrum, reprehenderit quidem officiis modi deserunt, adipisci autem veniam eveniet rem!</p> -->
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <span class="s1">我是一个span</span>
+</body>
+</html>
