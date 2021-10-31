@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Clear</title>
+    <style>
+        div {
+            font-size: 50px;
+        }
+        .box1, .box3{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: bisque;
+            float: left;
+        }
+        .box2 {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            float: right;
+        }
+
+        .box3{
+            background-color: orange;
+
+            /* clear: left; 清除 左侧 */
+            /* clear:  right; 清除 右侧 */
+            clear: both;
+
+        }
+
+        /* 由于box1 的浮动 导致 box3位置上移， 
+           也就是 box3 收到了 box1 浮动的影响，位置发生了改变
+        
+        如果不希望某个元素因为其他元素浮动的影响而改变位置， 则可 通过clear 属性 来清除浮动元素 对当前元素 所产生的影响 */
+
+
+        /* 清除 浮动元素 对 当前园所所产生的的影响
+        可选值 
+            clear : left 清除左侧元素 对当前元素 所产生的的影响
+            clear : right 清除右侧元素 对当前元素 所产生的的影响
+		    clear : both 清除两侧中 最大影响的那个
+
+            原理：设置 clear后，浏览器会自动为元素添加一个 上外边距 以使其 位置不受其他元素的影响. 
+                -- 本来 应该向上拱，clear: left 就不拱了 */
+
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>
