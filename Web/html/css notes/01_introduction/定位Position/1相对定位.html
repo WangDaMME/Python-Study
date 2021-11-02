@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1相对定位</title>
+    <style>
+        /***   
+        【相对定位relative特点】
+            1. 需要设置offset, top/bottom: xxx. left/right:xxx 2选1
+            2. 相对定位 是 参照于 元素在文档流中的位置进行定位的
+            3. 相对位置会 提升元素的层级， 也就是 可以盖住 没开启的
+            4. 相对定位不会使元素脱离文档流  -- 就是 原来 2 的位置 虽然被移动上去 但是 box3 上面的 位置 还被 box2占据
+            5. 相对定位不会改变元素的性质，块还是块，行内还是行内
+
+        ***/
+
+        .box1,.box2,.box3 {
+            width: 200px;
+            height: 200px;
+
+        }
+        .box1 {
+            background-color: aqua;
+        }
+        .box2 {
+
+            background-color: green;
+            position: relative;
+            top: -200px;
+            left: 100px; /** 相对位置会 提升元素的层级， 也就是 可以盖住 没开启的**/
+            
+        }
+        .box3 {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

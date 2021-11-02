@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20clearfix</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        /* 对子元素 加 marintop 会 传递给 父元素 -- 【 在 父子/兄弟 外边距 重叠 这部分】 
+            ----》 打破相邻： 用伪类
+        */
+        .box1::before{
+            /* content: "hello"; 让 box1 的外边距 和 box2 的外边距 隔离了 ，就不相邻了 */
+            content: '';
+            display: table;             /* display:table  (可以用来隔开两个外边距) */
+
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+        
+        /** clearfix 是类名 **/
+        .clearfix::before, 
+        .clearfix::after {
+            content: ""; /** 空内容 **/
+            display: table;
+            clear: both; /** 解决高度塌陷 **/
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
