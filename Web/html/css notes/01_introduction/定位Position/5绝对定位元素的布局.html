@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5绝对定位元素的布局</title>
+
+    <style>
+
+        /***
+            水平布局： 9 个量 （新加 left,right）= 包含块内容区的宽度 
+                left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right = 包含块内容区的宽度 
+
+            当水平方向开启绝对定位后:
+                水平方向等式 需要 加 left, right 两个值
+                【过度约束】
+                1）如果9个值中没有 auto, ==> 则自动调整 right 值 以使等式满足
+                2) 可设置 auto的值：{5个}
+                   margin-left, margin-right, margin-left, width, left, right 
+
+                3) 这时候 想要居中
+                    {
+                        margin-left ： auto, 
+                        margin-right： auto
+                        
+                        !!! 
+                        left: 0 ,
+                        right: 0,
+                    }
+                   因为 left 和 right 默认值 为auto, 当等式不满足 时候 会自动先调整 right 和 left
+
+
+                4) 相较之前， 垂直方向的等式 也必须要满足
+                   top + margin top/bottom + padding top/bottom + border top/bottom + height + bottom =  包含块内容区的高度
+
+                5） 同理 垂直方向居中
+                    {
+                        margin-top ： auto, 
+                        margin-bottom： auto
+                        
+                        !!! 
+                        top: 0 ,
+                        bottom: 0,
+                    }
+        ***/ 
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            
+            position: relative; /** 只是为 下面的absolute开启个绝对定位 **/
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+
+            margin-top: auto;
+            margin-bottom: auto;
+
+            top:0;
+            bottom: 0;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
