@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        .box1 {
+            
+            /** 文本修饰 text-decoration: 
+                underline 加下划线   ie 不支持 加颜色
+                line-through 删除线
+                overline 上划线**/
+            text-decoration: underline red;
+        }
+
+        .box2 {
+
+            width: 200px;
+            /** white-space 空白区域  设置 网页如何处理 空白 (也就是 换行)
+                normal 换行
+                nowrap 就是 不换行  横向出现滚动条
+                pre    保留 元素 里面的格式  ; 你咋写 咋显示
+                   aa
+                       aa 
+                     
+            text-overflow: 设置文本 溢出内容 
+                ellipsis; // 设置为省略号
+
+            **/
+            white-space: nowrap ;
+            overflow: hidden;
+            text-overflow: ellipsis; 
+
+        }
+
+    </style>
+<body>
+    
+</body>
+    <div class="box1">今天天气真不错</div>
+    <div class="box2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque maiores reiciendis blanditiis dolore quaerat dolores eaque sapiente facere animi nesciunt quam odit laborum quas recusandae eius fugit sequi, similique aliquid.</div>
+</html>
