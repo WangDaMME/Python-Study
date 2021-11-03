@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3京东顶部导航条</title>
+    <link rel = "stylesheet" href=".././css/reset.css">
+    <link rel="stylesheet" href="../fa/css/all.css">
+    <style>
+        /** 解决高度塌陷 **/
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .top-bar-wrapper
+        {
+            width: 100%;
+            background-color: #e3e4e5;
+            /* height: 30px; */
+            line-height: 30px; /** 文字居中 */
+            border-bottom: #ddd 1px solid;
+        }
+
+        /* 设置内部容器样式 */
+        .top-bar {
+            width: 1190px;
+            /** 设置 水平居中 **/
+            margin: 0 auto;
+        }
+
+        /* 设置 浮动 使 水平布局 */
+        .location {
+            float: left;
+        }
+        /* 设置location下的图标 */
+        .location .fas {
+            font-size:  14px;
+            color:#f10215;
+        }
+        /* 链接的hover */
+        .top-bar a:hover, .top-bar .highlight{
+            color:#f10215;
+        }
+
+        .shortcut {
+            float: right;
+        }
+
+        /* li 向左浮动排列 */
+        .shortcut li {
+            float: left;
+        }
+
+        body {
+            /* 设置字体 */
+            font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;            
+        }
+
+        /* 设置字体样式 */
+        .top-bar a, .top-bar span, .top-bar i {
+            color: #999;
+            text-decoration : none;
+        }
+
+        /* 做分割线 */
+        .shortcut .line {
+            width: 1px;
+            height: 10px;
+            background-color: #999;
+            /** 让线 垂直居中 **/
+            margin: 10px 12px; /* 上下 10 = 30 - 高度10 , 左右拉开12px (带外边距重叠的)*/
+        }
+
+        左右外边距
+    </style>
+</head>
+<body>
+
+    <!-- 外部容器 -->
+    <div class="top-bar-wrapper">
+
+        <!-- 内部容器 -->
+        <div class="top-bar clearfix ">  <!-- 解决 浮动引起的高度塌陷 -->
+
+            <!-- 左侧菜单-->
+            <div class="location">
+                <div class="current-city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:;">北京</a></div>
+            
+            </div>
+            <!-- 右侧菜单-->
+            <ul class="shortcut clearfix">   <!-- 子内容 li 也是脱离文档流了, 解决浮动引起的高度塌陷 -->
+                <li>
+                    <a href="javascript:;" class="highlight">你好，请登录</a>
+                    <a href="javascript:;" class="highlight">免费注册</a>
+                </li>
+
+                <!-- 分割线 -->
+                 <!-- 分割线 -->
+                 <li class="line"></li>
+                 <li><a href="javascript:;">我的订单</a></li>
+ 
+                 <li class="line"></li>
+                 <li>
+                     <a href="javascript:;">我的京东</a>
+                     <i class="fas fa-angle-down"></i>
+                 </li>
+ 
+ 
+                 <li class="line"></li>
+                 <li><a href="javascript:;">京东会员</a></li>
+ 
+                 <li class="line"></li>
+                 <li>
+                     <a href="javascript:;">企业采购</a>
+                     <i class="fas fa-angle-down"></i>
+                 </li>
+ 
+ 
+ 
+                 <li class="line"></li>
+                 <li>
+                     <span>客户服务</span>
+                     <i class="fas fa-angle-down"></i>
+                 </li>
+ 
+                 <li class="line"></li>
+                 <li>
+                     <span>网站导航</span>
+                     <i class="fas fa-angle-down"></i>
+                 </li>
+ 
+                 <li class="line"></li>
+                 <li>
+                     <span>手机京东</span>
+                 </li>
+             </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
