@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 按钮效果 就是切换背景图片 */
+
+        a:link {  /** 正常， 未访问过的链接 */
+
+            /** 行内元素 不支持 设置宽高 */
+            display: block;
+            width: 93px;
+            height: 29px;
+            background-image: url("./exercise_img/08/link.png");
+        }
+        
+
+        a:hover {  
+            background-image: url("./exercise_img/08/hover.png");
+        }
+
+        a:active {  
+            background-image: url("./exercise_img/08/active.png");
+        }
+        
+        /* 图片属于网页中的外部资源， 外部资源都需要 浏览器单独请求加载，
+            - 浏览器加载外部资源时候  是 按需加载， 用则加载， 不用则不加载 
+            - 像上边的link.png 会首先加载， 而hover 和active 会在指定状态触发时候加载 - 会花费时间加载， 切换的空隙 会出现 闪烁,  只会出现再第一次，之后浏览器会有缓存
+        */
+    </style>
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>
