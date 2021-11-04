@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景2 - 解决第一次 外部资源闪烁问题</title>
+    <style>
+
+        /** btn.png 是 这三张图片的合体 
+            好处 只需加载1次 就可以 全都加载出来了**/
+        a:link {
+            display: block;
+            width: 930px;
+            height: 32px;
+            background-image: url("./exercise_img/08/btn.png");
+        }
+        a:hover{
+            background-position: -93px ;
+        }
+        a:active {
+            background-position: -186px ;
+        }
+
+        /* 雪碧图使用步骤
+        1. 先确定要使用的图标， 
+        2. 测量图标大小
+        3. 根据测量结果 创建元素
+        4. 将雪碧图 设置为 元素背景图片
+        5. 设置 便宜量 background-position  */
+
+        .box2 {
+            width: 128px;
+            height: 46px;
+            background-image: url("./exercise_img/08/amazon-sprite_.png");
+
+        }
+
+        /** 往左上角 移动*/
+        .box3{
+            width: 42px;
+            height: 30px;
+            background-image: url("./exercise_img/08/amazon-sprite_.png");
+
+            background-position: -58px -338px;
+        }
+
+</style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+</body>
+</html>
