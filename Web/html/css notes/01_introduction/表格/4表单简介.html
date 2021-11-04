@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单就是用来提交数据 (网页中数据 到 远程服务器)
+        - action 属性 ： 指定表单要提交服务器的地址 
+    
+        input - 指定类型 submit 默认value 是 submit , value 设置 上面的名 
+
+        text 文本框: 想要提交 必须指定name属性值
+        password 密码框: 非铭文
+
+        radio 单选框 name相同 只能选择一个, value 作为选择之后的值 传递给服务器 默认 是 "on" checked 单选按钮 设置为默认选中
+
+        checkbox 多选框 
+        
+        下拉列表 select 里面是 option selected 默认选中
+
+        button : 创建普通按钮 不像submit 点完被提交, 这个唯一作用就是可以被点
+
+        input type:reset 重置按钮 所有都重置  -- 也可以 用button  type= "" 设置, button 可以放图片 .. button 更灵活一些
+
+        email : 会对格式进行检查
+
+
+        其他属性 :
+            autocomplete on/off 开启/关闭自动补全 , 以前填过的记录
+
+
+            readonly 将表单项 设置为只读. 数据可以提交
+            disabled 禁用, 点都点不了了
+
+            autofocus 自动获取焦点  (eg. 刷新页面 , 马上 高亮这个 输入框了)
+    -->
+
+    <form action="targetFake.html">
+        文本框: <input type="text" name="hello">
+        <input type="submit" value ="提交">
+
+        密码框: <input type="password" name ="password">
+        单选框: <input type="radio" name =nnn"  value="a">
+                <input type="radio" name =nnn" value="b" checked>
+        多选框: <input type="checkbox" name =test"  value="1" checked>
+                <input type="checkbox" name =test" value="2">
+                <input type="checkbox" name =test" value="3">
+
+        下拉框:
+        <select name="haha" >
+            <option value="i">选项1</option>
+            <option value="ii" selected>选项2</option>
+            <option value="iii">选项3</option>
+
+        </select>
+
+        创建按钮
+        <input type="button" value="按钮">
+
+    </form>
+</body>
+</html>
