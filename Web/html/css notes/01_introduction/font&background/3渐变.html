@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            
+            /* background-image: linear-gradient(red, yellow);  默认 */
+            /* background-image: linear-gradient( to right, red, yellow); to right, bottom , top or 复杂组合 to top left */
+            /* background-image: linear-gradient( 45deg, red, yellow); deg */
+            /* background-image: linear-gradient( 0.6turn, red, yellow); turn 圈 */
+
+            /* 渐变可以同时指定多种颜色， 多个颜色默认平均分配 */
+            /* background-image: linear-gradient( red, yellow, #bfa, orange); 分成4块 圈 */
+
+            /* 也可以手动指定 渐变分布情况 */
+            /* background-image: linear-gradient( red, 50px, yellow,100px); /*上面 0-50 都是红色. 黄色 从100px开始*/
+            /* background-image: repeating-linear-gradient(red 50px, yellow 100px) 可平铺线性渐变 */
+
+            /* 径向渐变 中心点 向 外部延申
+                1. 正方形 就是圆形，  长方形-椭圆型     circle, ellipse
+                2. at 指定 辐射中心   at top left
+                closet-side  辐射最远到哪里截至， fatherest-corner
+            */
+            background-image: radial-gradient( 100px 100px at 100px 50px ,red ,yellow);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    
+</body>
+</html>
