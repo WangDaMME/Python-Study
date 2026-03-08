@@ -3,6 +3,9 @@
 '''
 1. 基本语法结构
 '''
+from unittest import case
+
+
 def check(x):
     if x > 10:
         print(x)  # 不用；
@@ -251,13 +254,185 @@ michaelbjordan = Person("jordan")
 p_set = {jordan, michaelbjordan}
 print(len(p_set)) #1
 
+print("==============queue/stack/heapq/deque===========")
+#1. stack python中，用list实现stack 尾巴是栈顶
+stack = []
+stack.append(1)
+stack.append(2)
+stack.pop()
+stack[-1] #top peek
+if not stack :
+    print("stack empty")
+else: print(stack[-1])
 
-# 问题 1.map set heap swich case global tuple
-# 2. 语法糖
-# deque，deque，Counter， defaultdict
+# monotonic stack templated
+'''
+for i in range(len(nums)):
+    while stack and nums[stack[-1]< nums[i]]:
+        stack.pop()
+    stack.append(i)
+'''
 
-# https: // github.com / WangDaMME / Python - Study
-# https: // github.com / WangDaMME / DataStructure - Algorithm / tree / master / adt
+#2. queue: deque。# 为什么 Python 不要用 list 做 queue？ 因为 queue 的 dequeue 操作是从头删除元素，而 Python list 在头部删除是 O(n)
+from collections import deque
+queue = deque()
+queue.append(1) #append 是从右加入
+queue.append(2)
+queue.append(3)
 
-# 2d array
+print("queue", queue)
+queue.popleft() #先进先出 所以 popleft
+print("queue", queue) # 2,3
 
+deque = deque()
+# append / pop 都是从右边 popleft ，appendleft 都是从左边
+deque.append(1)
+deque.append(2)
+deque.appendleft(3)
+print("deque", deque) # 3,1,2
+
+import heapq # 默认heap
+nums = [3,2,1,5,6,4]
+
+# heapify_arr = heapq.heapify(nums) #会改变原数组
+# print(nums)
+heap = []
+top_k = 3
+for num in nums:
+    heapq.heappush(heap, num)
+    if len(heap) > top_k: # 会把暂时 最小的 堆顶pop 出去
+        heapq.heappop(heap)
+print("min_heap 3:", heap) # 4, 6, 5
+
+#1. maxheap 1.可以存负数  heapq.heappush(heap, -n)
+
+#2. 如果存对象 可以用 （tuple,object）
+# minheap 例子 存 对象 比如说dict 中元素 吧 类似 PriorityQueue<Map.Entry<String,Integer>> python例子
+data = {
+    "apple": 5,
+    "banana": 2,
+    "orange": 7
+}
+heap = []
+for k,v in data.items():
+    heapq.heappush(heap, (v,k))  #  (priority, value)
+#heap 内部：
+# [(2,'banana'), (5,'apple'), (7,'orange')]
+
+print('Q: 为什么 (count, word) 可以直接用在 heapq 比价呢？')
+print('A: 为 Python tuple 是可以比较的（lexicographical comparison 字典序比较）\ '
+      '(a1, b1) < (a2, b2)'
+      '先比较 a1 vs a2如果相等再比较 b1 vs b2'
+)
+# 深/浅 copy
+''' top word count
+from collections import Counter
+import heapq
+
+freq = Counter(nums)
+
+heap = []
+
+for word, count in freq.items():
+    heapq.heappush(heap, (count, word))
+'''
+
+
+print("============== switch case 3.10 以前没有 -》 match case===========")
+# 3.10 以前 if elif ...elif .. or map 机构
+# def get_day(n):
+#     switch = {
+#         1: "Mon",
+#         2: "Tue",
+#         3: "Wed"
+#     }
+#     return switch.get(n, "Unknown")
+'''
+def get_day(n):
+    match n: #3.9 does not support match
+        case 1:
+            return "Mon"
+        case 2:
+            return "Tue"
+        case _:
+            return "Others"
+'''
+print("============== accees modifier===========")
+# Python 没有真正的 access modifier。
+# var： public
+#_var	protected (约定)	内部使用
+#__var	private (name mangling)	避免子类覆盖
+
+print("============== try except finally ===========")
+'''
+try:
+    do_something()
+except SomeError as e:
+    handle_error()
+else:
+    run_if_no_error()
+finally:
+    cleanup()
+'''
+try:
+    f = open("test.text")
+except FileNotFoundError:
+    print("file not found")
+except PermissionError:
+    print("permission error")
+else:
+    print("else") #只有 没有异常才执行
+finally:
+    print("finally")
+
+# raise ValueError("invalid input") 主动抛异常
+
+print("============== global/nonlocal/with/yield/del ===========")
+#1. global 用于修改全局变量
+print("!!只能在函数内部声明，用来告诉 Python：这个变量来自 global scope（模块级变量")
+print("不能在函数外使用, 因为 module level 本来就是 global ")
+g_x  = 10 # !!! module level
+def foo():
+    # global g_x #！如果没有 global 也acceess 不到g_x UnboundLocalError
+    g_x = 20
+foo() # 执行完后 g_x update 全局变量
+print("g_x", g_x) #变为20
+''' 有时候会出现 UnboundLocalError, local variable 'x' referenced before assignment
+x = 10
+def foo():
+    x = x + 1
+foo()
+'''
+
+print("============ nonlocal ===============")
+print("nonlocal 修改外层函数变量")
+print("！nonlocal 必须至少2层嵌套函数 ")
+
+def outer():
+    x =10
+    def inner():
+        nonlocal x
+        x = 20
+    inner()
+    print(x) # 不写nonlocal x 就是 外面的10
+outer()
+print ("作用域范围\n","local --> nonlocal ->global")
+
+nums = [1,2,3,4,5]
+del nums[0]
+print(nums)
+
+print("============ 没有 const/let ===============")
+from typing import Final
+PI: Final = 3.14
+PI = 3.15
+print(PI) # IDE / type checker 会警告（mypy / PyCharm）。但运行时仍然允许。
+from dataclasses import dataclass
+@dataclass(frozen=True)
+class Constants:
+    PI: float = 3.14
+
+c = Constants()
+# c.PI = 3.15   # ❌编译时候报错 error dataclasses.FrozenInstanceError: cannot assign to field 'PI'
+
+print(c.PI)
