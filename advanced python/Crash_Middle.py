@@ -220,7 +220,7 @@ for x in count(5):
     print("gen",x) #<generator object count at 0x100e1bf90>
 
 '''
-9.module
+9.module vs package
 
 if __name__ == "__main__":
     print(add(1,2))。
@@ -228,6 +228,11 @@ if __name__ == "__main__":
 直接运行	"__main__"
 被 import	"module name"
 import math_utils as mu
+package
+my_package/
+    __init__.py
+    module1.py
+    module2.py
 
 '''
 
