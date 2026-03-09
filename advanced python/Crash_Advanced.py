@@ -111,7 +111,7 @@ async def task2():
     print("task 2 end")
 
 async def main():
-    await asyncio.gather(task1(), task2())
+    await asyncio.gather(task1(), task2()) #同时并发执行多个协程，并等待它们全部完成。
 
 asyncio.run(main())
 
