@@ -436,3 +436,16 @@ c = Constants()
 # c.PI = 3.15   # ❌编译时候报错 error dataclasses.FrozenInstanceError: cannot assign to field 'PI'
 
 print(c.PI)
+
+
+'''
+Python 标准库没有像 Java LinkedList 那样的专门 LinkedList 类，但有几种接近的实现方式。
+python 内置 list（最常用）
+2️⃣ collections.deque（双端链表/队列结构）
+3️⃣ 自己实现 LinkedList（面试常见）
+'''
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+        self.prev = None
