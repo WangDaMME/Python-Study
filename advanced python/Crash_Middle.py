@@ -219,6 +219,18 @@ def count(n):
 for x in count(5):
     print("gen",x) #<generator object count at 0x100e1bf90>
 
+'''
+9.module
+
+if __name__ == "__main__":
+    print(add(1,2))。
+情况	name
+直接运行	"__main__"
+被 import	"module name"
+import math_utils as mu
+
+'''
+
 
 # def fib(n):
 #     a, b = 0, 1
