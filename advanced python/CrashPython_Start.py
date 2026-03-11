@@ -3,10 +3,8 @@
 '''
 1. 基本语法结构
 '''
-from unittest import case
 
-
-def check(x):
+def check(x): # if- elif- else: 不带（）
     if x > 10:
         print(x)  # 不用；
     elif x ==10:
@@ -15,7 +13,7 @@ def check(x):
         print(str(x*-1))
 check(10)
 # 三元表达式
-print("big" if 10> 5 else "small")
+print("big" if 10> 5 else "small") # expr if else 
 
 # for , while
 for i in range(1,11):
@@ -52,6 +50,7 @@ print(arr[-1])   # 4
 print(arr[-2:]) # 取后2 位
 print(arr[::-1]) # 反转数组
 print(arr[::-2]) # 从后往前，每隔 2 个取一个元素。
+
 #:: 是 Python 切片 (slicing) 语法的一部分，用于指定 步长 (step)。 start end step
 # sequence[start : end : step], ::step 就是从头到尾
 print("slice",arr[::2])
@@ -76,7 +75,7 @@ for x in nums:
 
 print(result)
 #1.2
-result2 = [x*x if x % 2==0 else -1*x for x in nums] #偶数平方
+result2 = [x*x if x % 2==0 else -1*x for x in nums] #偶数平方  expr if else for x in nums
 print(result2)
 
 # tuple Immutable
@@ -152,7 +151,7 @@ pairs = [(1,3),(2,1),(4,2)]
 print(sorted(pairs, key = lambda x: x[1])) #按第二个元素排
 
 # lambda 匿名函数
-print("!!! lambda 核心参数", "参数：表达式, lambda x: x+1;   " \
+print("!!! lambda 核心参数", "lambda 参数：表达式, lambda x: x+1;   " \
                              "\n lambda x,y: x+y;")
 
 nums=[1,2,3,4,5]
